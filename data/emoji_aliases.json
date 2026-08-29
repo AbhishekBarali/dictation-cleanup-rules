@@ -1,0 +1,730 @@
+[
+  {
+    "phrase": "smile",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "smiley",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "smiley face",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "smiling",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "smiling face",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "happy",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "hapy",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "happy face",
+    "symbol": "😊"
+  },
+  {
+    "phrase": "grin",
+    "symbol": "😁"
+  },
+  {
+    "phrase": "grinning",
+    "symbol": "😁"
+  },
+  {
+    "phrase": "laugh",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "laughing",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "laughing face",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "tears of joy",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "joy",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "lol",
+    "symbol": "😂"
+  },
+  {
+    "phrase": "rolling laughing",
+    "symbol": "🤣"
+  },
+  {
+    "phrase": "rolling on the floor laughing",
+    "symbol": "🤣"
+  },
+  {
+    "phrase": "rofl",
+    "symbol": "🤣"
+  },
+  {
+    "phrase": "sad",
+    "symbol": "😢"
+  },
+  {
+    "phrase": "sad face",
+    "symbol": "😢"
+  },
+  {
+    "phrase": "tear",
+    "symbol": "😢"
+  },
+  {
+    "phrase": "cry",
+    "symbol": "😭"
+  },
+  {
+    "phrase": "crying",
+    "symbol": "😭"
+  },
+  {
+    "phrase": "sobbing",
+    "symbol": "😭"
+  },
+  {
+    "phrase": "loudly crying",
+    "symbol": "😭"
+  },
+  {
+    "phrase": "heart",
+    "symbol": "❤️"
+  },
+  {
+    "phrase": "hart",
+    "symbol": "❤️"
+  },
+  {
+    "phrase": "red heart",
+    "symbol": "❤️"
+  },
+  {
+    "phrase": "love",
+    "symbol": "❤️"
+  },
+  {
+    "phrase": "love heart",
+    "symbol": "❤️"
+  },
+  {
+    "phrase": "orange heart",
+    "symbol": "🧡"
+  },
+  {
+    "phrase": "yellow heart",
+    "symbol": "💛"
+  },
+  {
+    "phrase": "green heart",
+    "symbol": "💚"
+  },
+  {
+    "phrase": "blue heart",
+    "symbol": "💙"
+  },
+  {
+    "phrase": "purple heart",
+    "symbol": "💜"
+  },
+  {
+    "phrase": "black heart",
+    "symbol": "🖤"
+  },
+  {
+    "phrase": "white heart",
+    "symbol": "🤍"
+  },
+  {
+    "phrase": "broken heart",
+    "symbol": "💔"
+  },
+  {
+    "phrase": "heartbreak",
+    "symbol": "💔"
+  },
+  {
+    "phrase": "heart eyes",
+    "symbol": "😍"
+  },
+  {
+    "phrase": "love eyes",
+    "symbol": "😍"
+  },
+  {
+    "phrase": "smiling hearts",
+    "symbol": "🥰"
+  },
+  {
+    "phrase": "hearts face",
+    "symbol": "🥰"
+  },
+  {
+    "phrase": "thumbs up",
+    "symbol": "👍"
+  },
+  {
+    "phrase": "thumb up",
+    "symbol": "👍"
+  },
+  {
+    "phrase": "like",
+    "symbol": "👍"
+  },
+  {
+    "phrase": "thumbs down",
+    "symbol": "👎"
+  },
+  {
+    "phrase": "thumb down",
+    "symbol": "👎"
+  },
+  {
+    "phrase": "dislike",
+    "symbol": "👎"
+  },
+  {
+    "phrase": "fire",
+    "symbol": "🔥"
+  },
+  {
+    "phrase": "fier",
+    "symbol": "🔥"
+  },
+  {
+    "phrase": "flame",
+    "symbol": "🔥"
+  },
+  {
+    "phrase": "hot",
+    "symbol": "🔥"
+  },
+  {
+    "phrase": "rocket",
+    "symbol": "🚀"
+  },
+  {
+    "phrase": "launch",
+    "symbol": "🚀"
+  },
+  {
+    "phrase": "party",
+    "symbol": "🎉"
+  },
+  {
+    "phrase": "party popper",
+    "symbol": "🎉"
+  },
+  {
+    "phrase": "celebration",
+    "symbol": "🎉"
+  },
+  {
+    "phrase": "celebrate",
+    "symbol": "🎉"
+  },
+  {
+    "phrase": "party face",
+    "symbol": "🥳"
+  },
+  {
+    "phrase": "partying face",
+    "symbol": "🥳"
+  },
+  {
+    "phrase": "thinking",
+    "symbol": "🤔"
+  },
+  {
+    "phrase": "thinking face",
+    "symbol": "🤔"
+  },
+  {
+    "phrase": "hmm",
+    "symbol": "🤔"
+  },
+  {
+    "phrase": "wink",
+    "symbol": "😉"
+  },
+  {
+    "phrase": "winking",
+    "symbol": "😉"
+  },
+  {
+    "phrase": "winky",
+    "symbol": "😉"
+  },
+  {
+    "phrase": "kiss",
+    "symbol": "😘"
+  },
+  {
+    "phrase": "kissing",
+    "symbol": "😘"
+  },
+  {
+    "phrase": "kiss face",
+    "symbol": "😘"
+  },
+  {
+    "phrase": "cool",
+    "symbol": "😎"
+  },
+  {
+    "phrase": "sunglasses",
+    "symbol": "😎"
+  },
+  {
+    "phrase": "cool face",
+    "symbol": "😎"
+  },
+  {
+    "phrase": "nervous laugh",
+    "symbol": "😅"
+  },
+  {
+    "phrase": "sweat smile",
+    "symbol": "😅"
+  },
+  {
+    "phrase": "surprised",
+    "symbol": "😮"
+  },
+  {
+    "phrase": "surprise",
+    "symbol": "😮"
+  },
+  {
+    "phrase": "shocked",
+    "symbol": "😮"
+  },
+  {
+    "phrase": "wow",
+    "symbol": "😮"
+  },
+  {
+    "phrase": "scream",
+    "symbol": "😱"
+  },
+  {
+    "phrase": "screaming",
+    "symbol": "😱"
+  },
+  {
+    "phrase": "scared",
+    "symbol": "😱"
+  },
+  {
+    "phrase": "angry",
+    "symbol": "😠"
+  },
+  {
+    "phrase": "angry face",
+    "symbol": "😠"
+  },
+  {
+    "phrase": "mad",
+    "symbol": "😠"
+  },
+  {
+    "phrase": "swearing",
+    "symbol": "🤬"
+  },
+  {
+    "phrase": "cursing",
+    "symbol": "🤬"
+  },
+  {
+    "phrase": "pleading",
+    "symbol": "🥺"
+  },
+  {
+    "phrase": "puppy eyes",
+    "symbol": "🥺"
+  },
+  {
+    "phrase": "sleeping",
+    "symbol": "😴"
+  },
+  {
+    "phrase": "sleepy",
+    "symbol": "😴"
+  },
+  {
+    "phrase": "sick",
+    "symbol": "🤢"
+  },
+  {
+    "phrase": "nauseous",
+    "symbol": "🤢"
+  },
+  {
+    "phrase": "mind blown",
+    "symbol": "🤯"
+  },
+  {
+    "phrase": "exploding head",
+    "symbol": "🤯"
+  },
+  {
+    "phrase": "shrug",
+    "symbol": "🤷"
+  },
+  {
+    "phrase": "shrugging",
+    "symbol": "🤷"
+  },
+  {
+    "phrase": "face palm",
+    "symbol": "🤦"
+  },
+  {
+    "phrase": "facepalm",
+    "symbol": "🤦"
+  },
+  {
+    "phrase": "eye roll",
+    "symbol": "🙄"
+  },
+  {
+    "phrase": "rolling eyes",
+    "symbol": "🙄"
+  },
+  {
+    "phrase": "neutral",
+    "symbol": "😐"
+  },
+  {
+    "phrase": "straight face",
+    "symbol": "😐"
+  },
+  {
+    "phrase": "confused",
+    "symbol": "😕"
+  },
+  {
+    "phrase": "tongue",
+    "symbol": "😛"
+  },
+  {
+    "phrase": "tongue out",
+    "symbol": "😛"
+  },
+  {
+    "phrase": "hug",
+    "symbol": "🤗"
+  },
+  {
+    "phrase": "hugging",
+    "symbol": "🤗"
+  },
+  {
+    "phrase": "angel",
+    "symbol": "😇"
+  },
+  {
+    "phrase": "halo",
+    "symbol": "😇"
+  },
+  {
+    "phrase": "devil",
+    "symbol": "😈"
+  },
+  {
+    "phrase": "poop",
+    "symbol": "💩"
+  },
+  {
+    "phrase": "poo",
+    "symbol": "💩"
+  },
+  {
+    "phrase": "skull",
+    "symbol": "💀"
+  },
+  {
+    "phrase": "dead",
+    "symbol": "💀"
+  },
+  {
+    "phrase": "eyes",
+    "symbol": "👀"
+  },
+  {
+    "phrase": "looking",
+    "symbol": "👀"
+  },
+  {
+    "phrase": "clap",
+    "symbol": "👏"
+  },
+  {
+    "phrase": "clapping",
+    "symbol": "👏"
+  },
+  {
+    "phrase": "applause",
+    "symbol": "👏"
+  },
+  {
+    "phrase": "pray",
+    "symbol": "🙏"
+  },
+  {
+    "phrase": "praying",
+    "symbol": "🙏"
+  },
+  {
+    "phrase": "folded hands",
+    "symbol": "🙏"
+  },
+  {
+    "phrase": "please",
+    "symbol": "🙏"
+  },
+  {
+    "phrase": "raised hands",
+    "symbol": "🙌"
+  },
+  {
+    "phrase": "praise",
+    "symbol": "🙌"
+  },
+  {
+    "phrase": "hooray",
+    "symbol": "🙌"
+  },
+  {
+    "phrase": "wave",
+    "symbol": "👋"
+  },
+  {
+    "phrase": "waving",
+    "symbol": "👋"
+  },
+  {
+    "phrase": "hello",
+    "symbol": "👋"
+  },
+  {
+    "phrase": "goodbye",
+    "symbol": "👋"
+  },
+  {
+    "phrase": "handshake",
+    "symbol": "🤝"
+  },
+  {
+    "phrase": "deal",
+    "symbol": "🤝"
+  },
+  {
+    "phrase": "okay hand",
+    "symbol": "👌"
+  },
+  {
+    "phrase": "ok hand",
+    "symbol": "👌"
+  },
+  {
+    "phrase": "okay",
+    "symbol": "👌"
+  },
+  {
+    "phrase": "muscle",
+    "symbol": "💪"
+  },
+  {
+    "phrase": "flex",
+    "symbol": "💪"
+  },
+  {
+    "phrase": "strong",
+    "symbol": "💪"
+  },
+  {
+    "phrase": "crossed fingers",
+    "symbol": "🤞"
+  },
+  {
+    "phrase": "fingers crossed",
+    "symbol": "🤞"
+  },
+  {
+    "phrase": "luck",
+    "symbol": "🤞"
+  },
+  {
+    "phrase": "check",
+    "symbol": "✅"
+  },
+  {
+    "phrase": "check mark",
+    "symbol": "✅"
+  },
+  {
+    "phrase": "tick",
+    "symbol": "✅"
+  },
+  {
+    "phrase": "done",
+    "symbol": "✅"
+  },
+  {
+    "phrase": "cross",
+    "symbol": "❌"
+  },
+  {
+    "phrase": "cross mark",
+    "symbol": "❌"
+  },
+  {
+    "phrase": "x mark",
+    "symbol": "❌"
+  },
+  {
+    "phrase": "wrong",
+    "symbol": "❌"
+  },
+  {
+    "phrase": "warning",
+    "symbol": "⚠️"
+  },
+  {
+    "phrase": "caution",
+    "symbol": "⚠️"
+  },
+  {
+    "phrase": "hundred",
+    "symbol": "💯"
+  },
+  {
+    "phrase": "one hundred",
+    "symbol": "💯"
+  },
+  {
+    "phrase": "sparkle",
+    "symbol": "✨"
+  },
+  {
+    "phrase": "sparkles",
+    "symbol": "✨"
+  },
+  {
+    "phrase": "star",
+    "symbol": "⭐"
+  },
+  {
+    "phrase": "light bulb",
+    "symbol": "💡"
+  },
+  {
+    "phrase": "idea",
+    "symbol": "💡"
+  },
+  {
+    "phrase": "pin",
+    "symbol": "📌"
+  },
+  {
+    "phrase": "push pin",
+    "symbol": "📌"
+  },
+  {
+    "phrase": "location pin",
+    "symbol": "📍"
+  },
+  {
+    "phrase": "map pin",
+    "symbol": "📍"
+  },
+  {
+    "phrase": "target",
+    "symbol": "🎯"
+  },
+  {
+    "phrase": "bullseye",
+    "symbol": "🎯"
+  },
+  {
+    "phrase": "trophy",
+    "symbol": "🏆"
+  },
+  {
+    "phrase": "winner",
+    "symbol": "🏆"
+  },
+  {
+    "phrase": "cake",
+    "symbol": "🎂"
+  },
+  {
+    "phrase": "birthday cake",
+    "symbol": "🎂"
+  },
+  {
+    "phrase": "gift",
+    "symbol": "🎁"
+  },
+  {
+    "phrase": "present",
+    "symbol": "🎁"
+  },
+  {
+    "phrase": "rose",
+    "symbol": "🌹"
+  },
+  {
+    "phrase": "rainbow",
+    "symbol": "🌈"
+  },
+  {
+    "phrase": "sun",
+    "symbol": "☀️"
+  },
+  {
+    "phrase": "sunny",
+    "symbol": "☀️"
+  },
+  {
+    "phrase": "moon",
+    "symbol": "🌙"
+  },
+  {
+    "phrase": "coffee",
+    "symbol": "☕"
+  },
+  {
+    "phrase": "beer",
+    "symbol": "🍺"
+  },
+  {
+    "phrase": "pizza",
+    "symbol": "🍕"
+  },
+  {
+    "phrase": "siren",
+    "symbol": "🚨"
+  },
+  {
+    "phrase": "alarm",
+    "symbol": "🚨"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "name": "@speakoflow/deterministic-cleanup",
+  "version": "1.0.0",
+  "description": "Deterministic dictation cleanup: vocabulary correction, filler and stutter filtering, spoken emoji expansion, user replacement rules. Zero runtime dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "deterministic-cleanup": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "cli": "node dist/cli.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

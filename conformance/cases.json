@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "note": "Every case is a fixed input/output pair taken from the SpeakoFlow Rust test suite (see ../vendor/). A port is conformant when it reproduces every expected output byte for byte. Cases are grouped by stage; run each stage in isolation, not as a whole pipeline.",
+  "stages": {
+    "soundex": {
+      "function": "soundex(word) -> code",
+      "note": "Not textbook NARA Soundex. The first character is carried through literally rather than coded, characters outside a-z are NOT filtered out (they code as vowels), h and w are dropped before equal codes collapse while vowels are dropped after. This matches natural::phonetics::soundex in the vendored Rust. A port that filters non-ASCII letters will pass every other stage and still over-match across an accented leading character, which is why these cases exist.",
+      "cases": [
+        { "id": "soundex-empty", "word": "", "expected": "" },
+        { "id": "soundex-hello", "word": "hello", "expected": "h400" },
+        { "id": "soundex-helo", "word": "helo", "expected": "h400" },
+        { "id": "soundex-first-char-literal", "word": "sc", "expected": "s200" },
+        { "id": "soundex-first-char-not-coded", "word": "pfister", "expected": "p123" },
+        { "id": "soundex-vowel-separates-run", "word": "tymczak", "expected": "t522" },
+        { "id": "soundex-nonletter-codes-as-vowel", "word": "r&d", "expected": "r300" },
+        { "id": "soundex-rd", "word": "rd", "expected": "r300" },
+        { "id": "soundex-rand", "word": "rand", "expected": "r530" },
+        { "id": "soundex-chargeb", "word": "chargeb", "expected": "c621" },
+        { "id": "soundex-chargebee", "word": "chargebee", "expected": "c621" },
+        { "id": "soundex-leading-accent-kept", "word": "èchargeb", "expected": "è262" }
+      ]
+    },
+    "vocabulary": {
+      "function": "apply_vocabulary(text, vocabulary, threshold) -> text",
+      "cases": [
+        { "id": "vocab-exact", "text": "hello world", "vocabulary": ["Hello", "World"], "threshold": 0.5, "expected": "Hello World" },
+        { "id": "vocab-fuzzy", "text": "helo wrold", "vocabulary": ["hello", "world"], "threshold": 0.5, "expected": "hello world" },
+        { "id": "vocab-empty-list", "text": "hello world", "vocabulary": [], "threshold": 0.5, "expected": "hello world" },
+        { "id": "vocab-ngram-2", "text": "il cui nome è Charge B, che permette", "vocabulary": ["ChargeBee"], "threshold": 0.5, "expected_contains": ["ChargeBee,"], "expected_not_contains": ["Charge B"] },
+        { "id": "vocab-ngram-3", "text": "use Chat G P T for this", "vocabulary": ["ChatGPT"], "threshold": 0.5, "expected_contains": ["ChatGPT"] },
+        { "id": "vocab-prefers-longer-ngram", "text": "Open AI GPT model", "vocabulary": ["OpenAI", "GPT"], "threshold": 0.5, "expected": "OpenAI GPT model" },
+        { "id": "vocab-ngram-case", "text": "CHARGE B is great", "vocabulary": ["ChargeBee"], "threshold": 0.5, "expected_contains": ["CHARGEBEE"] },
+        { "id": "vocab-multiword-entry", "text": "using Mac Book Pro", "vocabulary": ["MacBook Pro"], "threshold": 0.5, "expected_contains": ["MacBook"] },
+        { "id": "vocab-trailing-digit-not-doubled", "text": "use GPT4 for this", "vocabulary": ["GPT-4"], "threshold": 0.5, "expected_not_contains": ["GPT-44"] },
+        { "id": "vocab-ampersand-compact", "text": "send it to RD for review", "vocabulary": ["R&D"], "threshold": 0.18, "expected": "send it to R&D for review" },
+        { "id": "vocab-ampersand-spoken", "text": "send it to R and D for review", "vocabulary": ["R&D"], "threshold": 0.18, "expected": "send it to R&D for review" },
+        { "id": "vocab-ampersand-idempotent", "text": "send it to R&D for review", "vocabulary": ["R&D"], "threshold": 0.18, "expected": "send it to R&D for review" },
+        { "id": "vocab-accented-neighbour-default-threshold", "text": "il cui nome è Charge B, che permette", "vocabulary": ["ChargeBee"], "threshold": 0.18, "expected": "il cui nome è ChargeBee permette" },
+        { "id": "vocab-accented-neighbour-loose-threshold", "text": "il cui nome è Charge B, che permette", "vocabulary": ["ChargeBee"], "threshold": 0.5, "expected": "il cui nome ChargeBee, che permette" }
+      ]
+    },
+    "case_preservation": {
+      "function": "preserve_case_pattern(original, replacement) -> text",
+      "cases": [
+        { "id": "case-allcaps", "original": "HELLO", "replacement": "world", "expected": "WORLD" },
+        { "id": "case-titlecase", "original": "Hello", "replacement": "world", "expected": "World" },
+        { "id": "case-lower-keeps-replacement", "original": "hello", "replacement": "WORLD", "expected": "WORLD" }
+      ]
+    },
+    "punctuation_split": {
+      "function": "extract_punctuation(word) -> [prefix, suffix]",
+      "cases": [
+        { "id": "punct-none", "word": "hello", "expected": ["", ""] },
+        { "id": "punct-both", "word": "!hello?", "expected": ["!", "?"] },
+        { "id": "punct-runs", "word": "...hello...", "expected": ["...", "..."] }
+      ]
+    },
+    "filler_and_stutter": {
+      "function": "filter_transcript(text, lang, custom_filler_words) -> text",
+      "cases": [
+        { "id": "filler-basic", "text": "So uhm I was thinking uh about this", "lang": "en", "custom_filler_words": null, "expected": "So I was thinking about this" },
+        { "id": "filler-case-insensitive", "text": "UHM this is UH a test", "lang": "en", "custom_filler_words": null, "expected": "this is a test" },
+        { "id": "filler-with-punctuation", "text": "Well, uhm, I think, uh. that's right", "lang": "en", "custom_filler_words": null, "expected": "Well, I think, that's right" },
+        { "id": "filler-collapses-whitespace", "text": "Hello    world   test", "lang": "en", "custom_filler_words": null, "expected": "Hello world test" },
+        { "id": "filler-trims", "text": "  Hello world  ", "lang": "en", "custom_filler_words": null, "expected": "Hello world" },
+        { "id": "filler-combined", "text": "  Uhm, so I was, uh, thinking about this  ", "lang": "en", "custom_filler_words": null, "expected": "so I was, thinking about this" },
+        { "id": "filler-noop-on-clean-text", "text": "This is a completely normal sentence.", "lang": "en", "custom_filler_words": null, "expected": "This is a completely normal sentence." },
+        { "id": "stutter-long-run", "text": "w wh wh wh wh wh wh wh wh wh why", "lang": "en", "custom_filler_words": null, "expected": "w wh why" },
+        { "id": "stutter-short-words", "text": "I I I I think so so so so", "lang": "en", "custom_filler_words": null, "expected": "I think so" },
+        { "id": "stutter-longer-words", "text": "Check data doc doc doc doc documentation.", "lang": "en", "custom_filler_words": null, "expected": "Check data doc documentation." },
+        { "id": "stutter-mixed-case", "text": "No NO no NO no", "lang": "en", "custom_filler_words": null, "expected": "No" },
+        { "id": "stutter-keeps-two", "text": "no no is fine", "lang": "en", "custom_filler_words": null, "expected": "no no is fine" },
+        { "id": "filler-en-removes-um", "text": "um I think um this is good", "lang": "en", "custom_filler_words": null, "expected": "I think this is good" },
+        { "id": "filler-pt-keeps-um", "text": "um gato bonito", "lang": "pt", "custom_filler_words": null, "expected": "um gato bonito" },
+        { "id": "filler-es-keeps-ha", "text": "ha sido un buen día", "lang": "es", "custom_filler_words": null, "expected": "ha sido un buen día" },
+        { "id": "filler-region-tag-normalised", "text": "um gato bonito", "lang": "pt-BR", "custom_filler_words": null, "expected": "um gato bonito" },
+        { "id": "filler-custom-overrides", "text": "okay so I think right this works", "lang": "en", "custom_filler_words": ["okay", "right"], "expected": "so I think this works" },
+        { "id": "filler-empty-custom-disables", "text": "So uhm I was thinking uh about this", "lang": "en", "custom_filler_words": [], "expected": "So uhm I was thinking uh about this" },
+        { "id": "filler-unknown-lang-fallback", "text": "uh I think uhm this works", "lang": "xx", "custom_filler_words": null, "expected": "I think this works" },
+        { "id": "filler-fallback-keeps-um", "text": "um I think this works", "lang": "xx", "custom_filler_words": null, "expected": "um I think this works" }
+      ]
+    },
+    "spoken_emoji": {
+      "function": "expand_spoken_emoji(text) -> text",
+      "cases": [
+        { "id": "emoji-multiple", "text": "That worked fire emoji rocket emoji!", "expected": "That worked 🔥 🚀!" },
+        { "id": "emoji-longest-alias-wins", "text": "Sending a red heart emoji, not a broken heart emoji.", "expected": "Sending a ❤️, not a 💔." },
+        { "id": "emoji-case-and-soft-separators", "text": "HAPPY, EMOJI and thumbs-up emoji", "expected": "😊 and 👍" },
+        { "id": "emoji-tolerates-asr-typos", "text": "smily emogi thumps up emoji rokcet emojy", "expected": "😊 👍 🚀" },
+        { "id": "emoji-natural-aliases", "text": "puppy eyes emoji facepalm emoji idea emoji", "expected": "🥺 🤦 💡" },
+        { "id": "emoji-unknown-unchanged", "text": "bad emoji and custom mascot emoji", "expected": "bad emoji and custom mascot emoji" },
+        { "id": "emoji-no-sentence-crossing", "text": "I feel happy. Emoji are useful.", "expected": "I feel happy. Emoji are useful." },
+        { "id": "emoji-non-command-untouched", "text": "The fire alarm has an emojiology label.", "expected": "The fire alarm has an emojiology label." },
+        { "id": "emoji-keeps-leading-words", "text": "I am very happy emoji", "expected": "I am very 😊" }
+      ]
+    },
+    "replacements": {
+      "function": "apply_replacements(text, rules) -> text",
+      "rule_defaults": { "is_regex": false, "enabled": true, "trim_before": false, "trim_after": false, "capitalization": "none" },
+      "cases": [
+        { "id": "repl-literal", "text": "teh cat", "rules": [{ "search": "teh", "replace": "the" }], "expected": "the cat" },
+        { "id": "repl-literal-not-regex", "text": "foo (c) bar", "rules": [{ "search": "(c)", "replace": "©" }], "expected": "foo © bar" },
+        { "id": "repl-dollar-is-literal", "text": "the price", "rules": [{ "search": "price", "replace": "$1" }], "expected": "the $1" },
+        { "id": "repl-disabled-skipped", "text": "teh cat", "rules": [{ "search": "teh", "replace": "the", "enabled": false }], "expected": "teh cat" },
+        { "id": "repl-empty-search-skipped", "text": "hello", "rules": [{ "search": "", "replace": "x" }], "expected": "hello" },
+        { "id": "repl-regex", "text": "my favourite colour", "rules": [{ "search": "\\bcolour\\b", "replace": "color", "is_regex": true }], "expected": "my favourite color" },
+        { "id": "repl-invalid-regex-skipped", "text": "(unclosed group", "rules": [{ "search": "(unclosed", "replace": "x", "is_regex": true }], "expected": "(unclosed group" },
+        { "id": "repl-order-matters", "text": "a", "rules": [{ "search": "a", "replace": "b" }, { "search": "b", "replace": "c" }], "expected": "c" },
+        { "id": "repl-trim-before", "text": "hello , world", "rules": [{ "search": ",", "replace": ",", "trim_before": true }], "expected": "hello, world" },
+        { "id": "repl-trim-after", "text": "foo (  bar)", "rules": [{ "search": "(", "replace": "(", "trim_after": true }], "expected": "foo (bar)" },
+        { "id": "repl-magic-uppercase", "text": "acme corp", "rules": [{ "search": "acme", "replace": "[uppercase]acme" }], "expected": "ACME corp" },
+        { "id": "repl-magic-lowercase", "text": "SHOUT now", "rules": [{ "search": "SHOUT", "replace": "[lowercase]quiet" }], "expected": "quiet now" },
+        { "id": "repl-magic-capitalize", "text": "name here", "rules": [{ "search": "name", "replace": "[capitalize]john" }], "expected": "John here" },
+        { "id": "repl-magic-nospace", "text": "brand", "rules": [{ "search": "brand", "replace": "[nospace]my brand" }], "expected": "mybrand" },
+        { "id": "repl-capitalization-field", "text": "the ceo spoke", "rules": [{ "search": "ceo", "replace": "ceo", "capitalization": "uppercase" }], "expected": "the CEO spoke" },
+        { "id": "repl-date-token", "text": "today", "rules": [{ "search": "today", "replace": "[date]" }], "expected_matches": "^\\d{4}-\\d{2}-\\d{2}$" },
+        { "id": "repl-time-token", "text": "now", "rules": [{ "search": "now", "replace": "[time]" }], "expected_matches": "^\\d{2}:\\d{2}$" }
+      ]
+    }
+  }
+}

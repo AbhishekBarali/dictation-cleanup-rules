@@ -1,0 +1,113 @@
+{
+  "en": [
+    "uh",
+    "um",
+    "uhm",
+    "umm",
+    "uhh",
+    "uhhh",
+    "ah",
+    "hmm",
+    "hm",
+    "mmm",
+    "mm",
+    "mh",
+    "eh",
+    "ehh",
+    "ha"
+  ],
+  "es": [
+    "ehm",
+    "mmm",
+    "hmm",
+    "hm"
+  ],
+  "pt": [
+    "ahm",
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "fr": [
+    "euh",
+    "hmm",
+    "hm",
+    "mmm"
+  ],
+  "de": [
+    "äh",
+    "ähm",
+    "hmm",
+    "hm",
+    "mmm"
+  ],
+  "it": [
+    "ehm",
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "cs": [
+    "ehm",
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "pl": [
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "tr": [
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "ru": [
+    "хм",
+    "ммм",
+    "hmm",
+    "mmm"
+  ],
+  "uk": [
+    "хм",
+    "ммм",
+    "hmm",
+    "mmm"
+  ],
+  "ar": [
+    "hmm",
+    "mmm"
+  ],
+  "ja": [
+    "hmm",
+    "mmm"
+  ],
+  "ko": [
+    "hmm",
+    "mmm"
+  ],
+  "vi": [
+    "hmm",
+    "mmm",
+    "hm"
+  ],
+  "zh": [
+    "hmm",
+    "mmm"
+  ],
+  "*": [
+    "uh",
+    "uhm",
+    "umm",
+    "uhh",
+    "uhhh",
+    "ah",
+    "hmm",
+    "hm",
+    "mmm",
+    "mm",
+    "mh",
+    "ehh"
+  ]
+}
