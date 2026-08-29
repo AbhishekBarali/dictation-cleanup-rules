@@ -1,7 +1,8 @@
 # Installing it
 
-Wiring the four passes into an existing dictation app. Read `spec/SPEC.md` for the
-algorithms; this file is about integration.
+Wiring the four rules into an existing dictation app. Read `spec/SPEC.md` for the
+algorithms; this file is about integration. If you would rather hand it to a coding
+agent, use `AGENTS.md` instead.
 
 ## 1. Decide what you actually need
 

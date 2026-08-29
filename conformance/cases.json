@@ -28,6 +28,7 @@
         { "id": "vocab-empty-list", "text": "hello world", "vocabulary": [], "threshold": 0.5, "expected": "hello world" },
         { "id": "vocab-ngram-2", "text": "il cui nome è Charge B, che permette", "vocabulary": ["ChargeBee"], "threshold": 0.5, "expected_contains": ["ChargeBee,"], "expected_not_contains": ["Charge B"] },
         { "id": "vocab-ngram-3", "text": "use Chat G P T for this", "vocabulary": ["ChatGPT"], "threshold": 0.5, "expected_contains": ["ChatGPT"] },
+        { "id": "vocab-ngram-window-caps-at-three", "note": "A four-word spoken acronym cannot be matched: the window maxes at 3, so 'Chat G P' matches on its own and the trailing T is orphaned. Known limitation, pinned so a fix is a deliberate change.", "text": "we should use Chat G P T for the draft", "vocabulary": ["ChatGPT"], "threshold": 0.18, "expected": "we should use ChatGPT T for the draft" },
         { "id": "vocab-prefers-longer-ngram", "text": "Open AI GPT model", "vocabulary": ["OpenAI", "GPT"], "threshold": 0.5, "expected": "OpenAI GPT model" },
         { "id": "vocab-ngram-case", "text": "CHARGE B is great", "vocabulary": ["ChargeBee"], "threshold": 0.5, "expected_contains": ["CHARGEBEE"] },
         { "id": "vocab-multiword-entry", "text": "using Mac Book Pro", "vocabulary": ["MacBook Pro"], "threshold": 0.5, "expected_contains": ["MacBook"] },

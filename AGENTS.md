@@ -1,22 +1,22 @@
 # Agent brief
 
-You are adding deterministic dictation cleanup to an existing app. Read this file,
-then `spec/SPEC.md`. Everything below is a constraint, not a suggestion.
+You are adding rule-based dictation cleanup to an existing app: four functions over
+a string, no model anywhere in them. Read this file, then `spec/SPEC.md`. Everything
+below is a constraint, not a suggestion.
 
 ## Paste this to your agent
 
-> Implement the deterministic dictation cleanup pipeline from
-> https://github.com/AbhishekBarali/deterministic-dictation-cleanup in this
-> codebase.
+> Add the dictation cleanup rules from
+> https://github.com/AbhishekBarali/dictation-cleanup-rules to this codebase.
 >
-> Read `spec/SPEC.md` for the normative algorithms, `data/*.json` for the pattern
-> tables, and `reference/python/cleanup.py` for a working implementation to port
-> from. Then read `AGENTS.md` in full before writing code.
+> Read `spec/SPEC.md` for the algorithms, `data/*.json` for the pattern tables, and
+> `reference/python/cleanup.py` for a working implementation to port from. Then read
+> `AGENTS.md` in full before writing code.
 >
 > Match my project's language, style, and dependency conventions. Do not add a
-> language model anywhere in these five stages. When you are done, run
-> `conformance/cases.json` against your implementation and report which cases
-> pass. Do not claim it works until that suite is green.
+> language model anywhere in these four rules. When you are done, run
+> `conformance/cases.json` against your implementation and tell me how many of the
+> 79 cases pass. Do not claim it works until that suite is green.
 
 ## What you are building
 
@@ -101,7 +101,10 @@ only. `"GPT4"` against `GPT-4` must give `GPT-4`, never `GPT-44`.
 
 **Skip stage 1 entirely if your recogniser takes a bias prompt.** Whisper's
 `initial_prompt` and equivalents bias the decoder, which beats correcting
-afterwards. Doing both double-corrects.
+afterwards. Doing both double-corrects. Two cases in the suite
+(`vocab-ngram-window-caps-at-three`, `vocab-accented-neighbour-*`) pin real
+limitations of stage 1 that biasing avoids entirely; read `NOTES.md` before you
+promise a user that stage 1 is reliable.
 
 ## Dependencies you may need
 
@@ -114,7 +117,7 @@ so you can port from there rather than pulling anything in.
 ## Definition of done
 
 - All four pure stages implemented, wired in the specified order.
-- `conformance/cases.json` runs against your implementation and every case passes,
+- `conformance/cases.json` runs against your implementation and all 79 cases pass,
   per stage, in isolation. Report the count.
 - The three-valued filler config is modelled explicitly, not as a truthiness check.
 - Stage 3, if present, cannot take the pipeline down.

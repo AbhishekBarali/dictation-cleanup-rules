@@ -116,7 +116,7 @@ For a candidate key `c` and a vocabulary key `v`:
 2. **Length gate.** Reject if `abs(len(c) - len(v)) > max(max(len(c), len(v)) * 0.25, 2.0)`.
    This is what stops a long n-gram from swallowing a short entry
    ("openaigpt" must not match "openai"). Lengths are **character** counts, not
-   bytes; see `DIVERGENCES.md` for what the Rust does here.
+   bytes; see `../NOTES.md` for what the Rust does here.
 3. `lev = levenshtein(c, v) / max(len(c), len(v))`, or `1.0` when both are empty.
 4. `phonetic = soundex(c) == soundex(v)`, using the Soundex variant below.
 5. `score = lev * 0.3` if `phonetic` else `lev`.
@@ -374,5 +374,6 @@ byte for byte. Run stages in isolation, not as a pipeline.
 
 Add cases when you add behaviour. Do not delete a case to make a port pass.
 
-Where this document and the vendored Rust disagree, and where the Rust has a bug
-worth fixing upstream, see `../DIVERGENCES.md`.
+Two cases pin behaviour that is arguably wrong rather than right, because it is
+what the shipped code does. Where this document and the vendored Rust disagree, and
+what the ports found, see `../NOTES.md`.
